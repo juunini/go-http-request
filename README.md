@@ -11,5 +11,5 @@ $ go get -u github.com/juunini/go-http-request
 ```go
 import http_request "github.com/juunini/go-http-request"
 
-http_request.Request(method, url, headers, body)
+response, err := http_request.Request(method, url, headers, body)
 ```
