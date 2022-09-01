@@ -11,8 +11,10 @@ func Request(method, url string, headers *map[string]string, body io.Reader) (*h
 		return nil, err
 	}
 
-	for key, value := range *headers {
-		request.Header.Add(key, value)
+	if headers != nil {
+		for key, value := range *headers {
+			request.Header.Add(key, value)
+		}
 	}
 
 	client := &http.Client{}
